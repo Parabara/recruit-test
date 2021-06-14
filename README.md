@@ -1,6 +1,14 @@
 ## 파라바라 Mobile 사전과제
 ### BaseURL : https://api.recruit-test.parabara.kr
 
+
+### Request Header
+##### 메일에 토큰정보를 첨부하여 보내드렸습니다.
+|x-token|Description| 
+|------|---|
+|토큰값|사용자별로 부여된 토큰값|
+
+
 ### 이미지 업로드
 
 URI : POST /api/product/upload
@@ -13,7 +21,7 @@ URI : POST /api/product/upload
 
 ```
 curl \
--H 'x-token: 123456' \
+-H 'x-token: {발급받은토큰}' \
 -X POST -F 'image=@/Users/yeonjung/Desktop/image.png' \
 https://api.recruit-test.parabara.kr/api/product/upload
 ```
@@ -38,7 +46,7 @@ https://api.recruit-test.parabara.kr/api/product/upload
 }
 ```
 
-### 상품 등록 
+### 상품 등록
 
 URI : POST /api/product
 
@@ -53,7 +61,7 @@ URI : POST /api/product
 
 ```
 curl \
--H "x-token: 123456" \
+-H "x-token: {발급받은토큰}" \
 -X POST \
 -F title=title \
 -F content=content \
@@ -79,9 +87,9 @@ https://api.recruit-test.parabara.kr/api/product
     "status": 200,
     "data": {
         "id": 20,
-        "title": "asdfas12121231",
-        "content": "dsafsadf213123",
-        "price": 1000,
+        "title": "title",
+        "content": "content",
+        "price": 10000,
         "images": [
             "https://d2jtcj253cfxcl.cloudfront.net/test/202106/49ee3231-1181-4f7b-a170-22f987f48cdb.jpg",
             "https://d2jtcj253cfxcl.cloudfront.net/test/202106/930ef147-72b3-4870-81b1-96fb5b561f54.jpg"
@@ -107,7 +115,7 @@ URI : PUT /api/product
 
 ```
 curl \
--H "x-token: 123456" \
+-H "x-token: {발급받은토큰}" \
 -X PUT \
 -F id=1 \
 -F title=title \
@@ -142,7 +150,7 @@ https://api.recruit-test.parabara.kr/api/product
     "message": "SUCCESS"
 }
 ```
-#### 상품 삭제 
+#### 상품 삭제
 URI : DELETE /api/product/{id}
 
 ##### Request Path
@@ -152,7 +160,7 @@ URI : DELETE /api/product/{id}
 
 ```
 curl \
--H "x-token: 123456" \
+-H "x-token: {발급받은토큰}" \
 -X DELETE \
 https://api.recruit-test.parabara.kr/api/product/{id}
 ```
@@ -182,7 +190,7 @@ URI : GET /api/product
 
 ```
 curl \
--H "x-token: 123456" \
+-H "x-token: {발급받은토큰}" \
 -X GET \
 -F page=1 \
 -F size=10 \
@@ -241,7 +249,7 @@ URI : GET /api/product/{id}
 
 ```
 curl \
--H "x-token: 123456" \
+-H "x-token: {발급받은토큰}" \
 -X GET \
 https://api.recruit-test.parabara.kr/api/product/{id}
 ```
@@ -275,12 +283,11 @@ https://api.recruit-test.parabara.kr/api/product/{id}
 }
 ```
 
-#===========================
-### Request Header
-|x-token|Description| 
-|------|---|
-|토큰값|사용자별로 부여된 토큰값|
 
+<br/>
+<br/>
+
+#=======================
 ### Response
 #### data
 |data|Description| 
