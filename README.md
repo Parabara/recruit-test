@@ -150,7 +150,8 @@ https://api.recruit-test.parabara.kr/api/product
     "message": "SUCCESS"
 }
 ```
-#### 상품 삭제
+
+### 상품 삭제
 URI : DELETE /api/product/{id}
 
 ##### Request Path
@@ -179,7 +180,7 @@ https://api.recruit-test.parabara.kr/api/product/{id}
 }
 ```
 
-#### 상품 리스트 조회
+### 상품 리스트 조회
 URI : GET /api/product
 
 ##### Request Param
@@ -239,7 +240,7 @@ https://api.recruit-test.parabara.kr/api/product
 }
 ```
 
-#### 상품 상세 조회
+### 상품 상세 조회
 URI : GET /api/product/{id}
 
 ##### Request Path
@@ -287,7 +288,7 @@ https://api.recruit-test.parabara.kr/api/product/{id}
 <br/>
 <br/>
 
-#=======================
+# =======================
 ### Response
 #### data
 |data|Description| 
